@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adftestproject11"
+		},
+		"LS_AzureDataLakeStorage_Destination_accountKey": {
+			"value": ""
+		},
+		"LS_AzureDataLakeStorage_source_accountKey": {
+			"value": ""
+		},
+		"LS_AzureDataLakeStorage_Destination_properties_typeProperties_url": {
+			"value": "https://adlsdestinationdatastore.dfs.core.windows.net/"
+		},
+		"LS_AzureDataLakeStorage_source_properties_typeProperties_url": {
+			"value": "https://adlssourcedatastore.dfs.core.windows.net/"
+		}
+	}
+}
