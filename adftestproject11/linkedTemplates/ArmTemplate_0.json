@@ -269,7 +269,10 @@
 																"referenceName": "DS_ADLS_Binary_destination",
 																"type": "DatasetReference",
 																"parameters": {
-																	"FolderName": "textoutput",
+																	"FolderName": {
+																		"value": "@item().name",
+																		"type": "Expression"
+																	},
 																	"FileName": {
 																		"value": "@item().name",
 																		"type": "Expression"
@@ -331,7 +334,10 @@
 																"referenceName": "DS_ADLS_Binary_destination",
 																"type": "DatasetReference",
 																"parameters": {
-																	"FolderName": "csvoutput",
+																	"FolderName": {
+																		"value": "@item().name",
+																		"type": "Expression"
+																	},
 																	"FileName": {
 																		"value": "@item().name",
 																		"type": "Expression"
