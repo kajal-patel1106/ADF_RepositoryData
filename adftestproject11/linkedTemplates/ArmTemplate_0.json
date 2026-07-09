@@ -220,7 +220,7 @@
 										},
 										"cases": [
 											{
-												"value": "text",
+												"value": "txt",
 												"activities": [
 													{
 														"name": "Copy data1",
