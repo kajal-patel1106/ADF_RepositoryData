@@ -65,71 +65,6 @@
 										"value": "text",
 										"activities": [
 											{
-												"name": "Copy data2",
-												"type": "Copy",
-												"dependsOn": [],
-												"policy": {
-													"timeout": "0.12:00:00",
-													"retry": 0,
-													"retryIntervalInSeconds": 30,
-													"secureOutput": false,
-													"secureInput": false
-												},
-												"userProperties": [],
-												"typeProperties": {
-													"source": {
-														"type": "BinarySource",
-														"storeSettings": {
-															"type": "AzureBlobFSReadSettings",
-															"recursive": true
-														},
-														"formatSettings": {
-															"type": "BinaryReadSettings"
-														}
-													},
-													"sink": {
-														"type": "BinarySink",
-														"storeSettings": {
-															"type": "AzureBlobFSWriteSettings"
-														}
-													},
-													"enableStaging": false
-												},
-												"inputs": [
-													{
-														"referenceName": "DS_adls_source_Binary",
-														"type": "DatasetReference",
-														"parameters": {
-															"FileName": {
-																"value": "@item().name",
-																"type": "Expression"
-															}
-														}
-													}
-												],
-												"outputs": [
-													{
-														"referenceName": "DS_ADLS_Binary_destination",
-														"type": "DatasetReference",
-														"parameters": {
-															"FolderName": {
-																"value": "@item().name",
-																"type": "Expression"
-															},
-															"FileName": {
-																"value": "@item().name",
-																"type": "Expression"
-															}
-														}
-													}
-												]
-											}
-										]
-									},
-									{
-										"value": "csv",
-										"activities": [
-											{
 												"name": "Copy data1",
 												"type": "Copy",
 												"dependsOn": [],
@@ -177,10 +112,69 @@
 														"referenceName": "DS_ADLS_Binary_destination",
 														"type": "DatasetReference",
 														"parameters": {
-															"FolderName": {
+															"FolderName": "textoutput",
+															"FileName": {
 																"value": "@item().name",
 																"type": "Expression"
-															},
+															}
+														}
+													}
+												]
+											}
+										]
+									},
+									{
+										"value": "csv",
+										"activities": [
+											{
+												"name": "Copy data2",
+												"type": "Copy",
+												"dependsOn": [],
+												"policy": {
+													"timeout": "0.12:00:00",
+													"retry": 0,
+													"retryIntervalInSeconds": 30,
+													"secureOutput": false,
+													"secureInput": false
+												},
+												"userProperties": [],
+												"typeProperties": {
+													"source": {
+														"type": "BinarySource",
+														"storeSettings": {
+															"type": "AzureBlobFSReadSettings",
+															"recursive": true
+														},
+														"formatSettings": {
+															"type": "BinaryReadSettings"
+														}
+													},
+													"sink": {
+														"type": "BinarySink",
+														"storeSettings": {
+															"type": "AzureBlobFSWriteSettings"
+														}
+													},
+													"enableStaging": false
+												},
+												"inputs": [
+													{
+														"referenceName": "DS_adls_source_Binary",
+														"type": "DatasetReference",
+														"parameters": {
+															"FileName": {
+																"value": "@item().name",
+																"type": "Expression"
+															}
+														}
+													}
+												],
+												"outputs": [
+													{
+														"referenceName": "DS_ADLS_Binary_destination",
+														"type": "DatasetReference",
+														"parameters": {
+															"FolderName": "csvoutput",
 															"FileName": {
 																"value": "@item().name",
 																"type": "Expression"
