@@ -62,7 +62,7 @@
 								},
 								"cases": [
 									{
-										"value": "txt",
+										"value": "text",
 										"activities": [
 											{
 												"name": "Copy data1",
