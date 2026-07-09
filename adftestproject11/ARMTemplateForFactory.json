@@ -265,7 +265,8 @@
 						"folderPath": {
 							"value": "@dataset().FolderName",
 							"type": "Expression"
-						}
+						},
+						"fileSystem": "output"
 					}
 				}
 			},
