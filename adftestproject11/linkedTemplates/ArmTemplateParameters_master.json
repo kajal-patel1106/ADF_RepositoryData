@@ -14,6 +14,9 @@
 		"LS_Lookup_Filter_accountKey": {
 			"value": ""
 		},
+		"LS_filtertocopy_accountKey": {
+			"value": ""
+		},
 		"LS_getmetadat_filter_accountKey": {
 			"value": ""
 		},
@@ -25,6 +28,9 @@
 		},
 		"LS_Lookup_Filter_properties_typeProperties_url": {
 			"value": "https://adlssourcedatastore.dfs.core.windows.net/"
+		},
+		"LS_filtertocopy_properties_typeProperties_url": {
+			"value": "https://adlsdestinationdatastore.dfs.core.windows.net/"
 		},
 		"LS_getmetadat_filter_properties_typeProperties_url": {
 			"value": "https://adlssourcedatastore.dfs.core.windows.net/"

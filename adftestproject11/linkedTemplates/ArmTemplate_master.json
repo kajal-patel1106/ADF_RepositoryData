@@ -19,6 +19,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_Lookup_Filter'"
 		},
+		"LS_filtertocopy_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_filtertocopy'"
+		},
 		"LS_getmetadat_filter_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_getmetadat_filter'"
@@ -34,6 +38,10 @@
 		"LS_Lookup_Filter_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlssourcedatastore.dfs.core.windows.net/"
+		},
+		"LS_filtertocopy_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdestinationdatastore.dfs.core.windows.net/"
 		},
 		"LS_getmetadat_filter_properties_typeProperties_url": {
 			"type": "string",
@@ -75,6 +83,9 @@
 					"LS_Lookup_Filter_accountKey": {
 						"value": "[parameters('LS_Lookup_Filter_accountKey')]"
 					},
+					"LS_filtertocopy_accountKey": {
+						"value": "[parameters('LS_filtertocopy_accountKey')]"
+					},
 					"LS_getmetadat_filter_accountKey": {
 						"value": "[parameters('LS_getmetadat_filter_accountKey')]"
 					},
@@ -86,6 +97,9 @@
 					},
 					"LS_Lookup_Filter_properties_typeProperties_url": {
 						"value": "[parameters('LS_Lookup_Filter_properties_typeProperties_url')]"
+					},
+					"LS_filtertocopy_properties_typeProperties_url": {
+						"value": "[parameters('LS_filtertocopy_properties_typeProperties_url')]"
 					},
 					"LS_getmetadat_filter_properties_typeProperties_url": {
 						"value": "[parameters('LS_getmetadat_filter_properties_typeProperties_url')]"
