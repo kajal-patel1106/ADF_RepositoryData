@@ -1,0 +1,140 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adftestproject11"
+		},
+		"LS_AzureDataLakeStorage_Destination_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_AzureDataLakeStorage_Destination'"
+		},
+		"LS_AzureDataLakeStorage_source_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_AzureDataLakeStorage_source'"
+		},
+		"LS_Lookup_Filter_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Lookup_Filter'"
+		},
+		"LS_SqlServer_lookup_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SqlServer_lookup'"
+		},
+		"LS_filtertocopy_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_filtertocopy'"
+		},
+		"LS_getmetadat_filter_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_getmetadat_filter'"
+		},
+		"LS_AzureDataLakeStorage_Destination_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdestinationdatastore.dfs.core.windows.net/"
+		},
+		"LS_AzureDataLakeStorage_source_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlssourcedatastore.dfs.core.windows.net/"
+		},
+		"LS_Lookup_Filter_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlssourcedatastore.dfs.core.windows.net/"
+		},
+		"LS_SqlServer_lookup_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost"
+		},
+		"LS_SqlServer_lookup_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "RetailDW_Dev"
+		},
+		"LS_SqlServer_lookup_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"LS_filtertocopy_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdestinationdatastore.dfs.core.windows.net/"
+		},
+		"LS_getmetadat_filter_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlssourcedatastore.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adftestproject11_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_AzureDataLakeStorage_Destination_accountKey": {
+						"value": "[parameters('LS_AzureDataLakeStorage_Destination_accountKey')]"
+					},
+					"LS_AzureDataLakeStorage_source_accountKey": {
+						"value": "[parameters('LS_AzureDataLakeStorage_source_accountKey')]"
+					},
+					"LS_Lookup_Filter_accountKey": {
+						"value": "[parameters('LS_Lookup_Filter_accountKey')]"
+					},
+					"LS_filtertocopy_accountKey": {
+						"value": "[parameters('LS_filtertocopy_accountKey')]"
+					},
+					"LS_getmetadat_filter_accountKey": {
+						"value": "[parameters('LS_getmetadat_filter_accountKey')]"
+					},
+					"LS_SqlServer_lookup_password": {
+						"value": "[parameters('LS_SqlServer_lookup_password')]"
+					},
+					"LS_AzureDataLakeStorage_Destination_properties_typeProperties_url": {
+						"value": "[parameters('LS_AzureDataLakeStorage_Destination_properties_typeProperties_url')]"
+					},
+					"LS_AzureDataLakeStorage_source_properties_typeProperties_url": {
+						"value": "[parameters('LS_AzureDataLakeStorage_source_properties_typeProperties_url')]"
+					},
+					"LS_Lookup_Filter_properties_typeProperties_url": {
+						"value": "[parameters('LS_Lookup_Filter_properties_typeProperties_url')]"
+					},
+					"LS_filtertocopy_properties_typeProperties_url": {
+						"value": "[parameters('LS_filtertocopy_properties_typeProperties_url')]"
+					},
+					"LS_getmetadat_filter_properties_typeProperties_url": {
+						"value": "[parameters('LS_getmetadat_filter_properties_typeProperties_url')]"
+					},
+					"LS_SqlServer_lookup_properties_typeProperties_server": {
+						"value": "[parameters('LS_SqlServer_lookup_properties_typeProperties_server')]"
+					},
+					"LS_SqlServer_lookup_properties_typeProperties_database": {
+						"value": "[parameters('LS_SqlServer_lookup_properties_typeProperties_database')]"
+					},
+					"LS_SqlServer_lookup_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SqlServer_lookup_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
