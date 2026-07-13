@@ -31,7 +31,7 @@
 				}
 			},
 			{
-				"name": "ForEach1",
+				"name": "ForEachSQLTable",
 				"type": "ForEach",
 				"dependsOn": [
 					{
@@ -46,7 +46,21 @@
 					"items": {
 						"value": "@activity('LKUP_SQL_WATERMARK_DW').output.value",
 						"type": "Expression"
-					}
+					},
+					"activities": [
+						{
+							"name": "Execute Pipeline1",
+							"type": "ExecutePipeline",
+							"dependsOn": [],
+							"policy": {
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"waitOnCompletion": true
+							}
+						}
+					]
 				}
 			}
 		],
