@@ -1,0 +1,30 @@
+{
+	"name": "DS_LKUP_MAX_VALUE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQLSERVER_DW",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"SchemaName": {
+					"value": "@dataset().SchemaName",
+					"type": "Expression"
+				},
+				"TableName": {
+					"value": "@dataset().TableName",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"SchemaName": {
+				"type": "string"
+			},
+			"TableName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	}
+}
