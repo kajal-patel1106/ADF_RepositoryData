@@ -1,0 +1,12 @@
+{
+	"name": "DS_SqlTable_Parquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLS_SQL_PARQUET",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	}
+}
