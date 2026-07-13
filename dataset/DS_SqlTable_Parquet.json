@@ -5,6 +5,11 @@
 			"referenceName": "ADLS_SQL_PARQUET",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"TableName": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "SqlServerTable",
 		"schema": []

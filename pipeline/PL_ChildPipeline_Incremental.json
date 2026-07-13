@@ -114,9 +114,38 @@
 							"outputs": [
 								{
 									"referenceName": "DS_SqlTable_Parquet",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"TableName": {
+											"value": "@pipeline().parameters.TableName",
+											"type": "Expression"
+										}
+									}
 								}
 							]
+						},
+						{
+							"name": "EXEC_UPDATE_WATERMRK_TABLE",
+							"type": "ExecutePipeline",
+							"dependsOn": [
+								{
+									"activity": "COPY_SQLFULL_IN_CLOUD_TABLE",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"pipeline": {
+									"referenceName": "PL_Child_Pipeline_StoreProcedure",
+									"type": "PipelineReference"
+								},
+								"waitOnCompletion": true
+							}
 						}
 					]
 				}
